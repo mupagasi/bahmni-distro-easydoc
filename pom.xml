@@ -27,6 +27,7 @@
     <!-- Configs -->
     <child.openmrsconfigVersion>1.0.0-SNAPSHOT</child.openmrsconfigVersion>
     <child.bahmniconfigVersion>1.0.0-SNAPSHOT</child.bahmniconfigVersion>
+    <child.odooconfigVersion>1.0.0-SNAPSHOT</child.odooconfigVersion>
 
   </properties>
 
@@ -42,6 +43,12 @@
       <artifactId>bahmni-config-easydoc</artifactId>
       <type>zip</type>
       <version>${child.bahmniconfigVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>net.mekomsolutions</groupId>
+      <artifactId>odoo-config-easydoc</artifactId>
+      <type>zip</type>
+      <version>${child.odooconfigVersion}</version>
     </dependency>
   </dependencies>
 
@@ -66,7 +73,7 @@
               <includeArtifactIds>openmrs-config-easydoc</includeArtifactIds>
             </configuration>
           </execution>
-        <!-- Bahmni child config -->
+          <!-- Bahmni child config -->
           <execution>
             <id>unpack-bahmni-config-easydoc</id>
             <phase>package</phase>
@@ -80,17 +87,31 @@
               <includeArtifactIds>bahmni-config-easydoc</includeArtifactIds>
             </configuration>
           </execution>
+          <!-- Odoo child config -->
+          <execution>
+            <id>unpack-odoo-config-easydoc</id>
+            <phase>package</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <excludeTransitive>true</excludeTransitive>
+              <useBaseVersion>true</useBaseVersion>
+              <outputDirectory>${distro.odooconfigDir}</outputDirectory>
+              <includeArtifactIds>odoo-config-easydoc</includeArtifactIds>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
     </plugins>
   </build>
   <repositories>
-   <repository>
-     <id>mks-nexus-public</id>
-     <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
-     <snapshots>
-       <updatePolicy>always</updatePolicy>
-     </snapshots>
-   </repository>
- </repositories>
+    <repository>
+      <id>mks-nexus-public</id>
+      <url>https://nexus.mekomsolutions.net/repository/maven-public/</url>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 </project>
