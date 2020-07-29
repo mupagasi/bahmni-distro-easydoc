@@ -25,9 +25,9 @@
   <properties>
 
     <!-- Configs -->
-    <child.openmrsconfigVersion>1.0.0-SNAPSHOT</child.openmrsconfigVersion>
-    <child.bahmniconfigVersion>1.0.0-SNAPSHOT</child.bahmniconfigVersion>
-    <child.odooconfigVersion>1.0.0-SNAPSHOT</child.odooconfigVersion>
+    <child.2.openmrsconfigVersion>1.0.0-SNAPSHOT</child.2.openmrsconfigVersion>
+    <child.2.bahmniconfigVersion>1.0.0-SNAPSHOT</child.2.bahmniconfigVersion>
+    <child.2.odooconfigVersion>1.0.0-SNAPSHOT</child.2.odooconfigVersion>
 
   </properties>
 
@@ -36,19 +36,19 @@
       <groupId>net.mekomsolutions</groupId>
       <artifactId>openmrs-config-easydoc</artifactId>
       <type>zip</type>
-      <version>${child.openmrsconfigVersion}</version>
+      <version>${child.2.openmrsconfigVersion}</version>
     </dependency>
     <dependency>
       <groupId>net.mekomsolutions</groupId>
       <artifactId>bahmni-config-easydoc</artifactId>
       <type>zip</type>
-      <version>${child.bahmniconfigVersion}</version>
+      <version>${child.2.bahmniconfigVersion}</version>
     </dependency>
     <dependency>
       <groupId>net.mekomsolutions</groupId>
       <artifactId>odoo-config-easydoc</artifactId>
       <type>zip</type>
-      <version>${child.odooconfigVersion}</version>
+      <version>${child.2.odooconfigVersion}</version>
     </dependency>
   </dependencies>
 
